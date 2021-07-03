@@ -6,11 +6,6 @@ import 'constants.dart';
 
 
 
-enum Gender{
-  male,
-  female,
-}
-
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
