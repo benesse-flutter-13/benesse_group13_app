@@ -22,7 +22,7 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('分野を選んでください'),
+          title: Text('将来興味のある分野を選んでください'),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -56,6 +56,12 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
                 MyStatefulWidget(label: "芸能・芸術系",),
                 MyStatefulWidget(label: "デザイン系",),
                 MyStatefulWidget(label: "教育系",),
+                MyStatefulWidget(label: "社会・福祉系",),
+                MyStatefulWidget(label: "自然研究・技術系",),
+                MyStatefulWidget(label: "機械・化学研究・技術系",),
+                MyStatefulWidget(label: "コンピューター系",),
+                MyStatefulWidget(label: "建築系",),
+                MyStatefulWidget(label: "運輸系",),
 
                 // MyStatefulWidget(label: "neko", icon: Icons.medical_services,),
                 // MyStatefulWidget(label: "neko", icon: Icons.medical_services,),
