@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:bmi_calculator/main.dart';
+import 'package:colleXpass/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';

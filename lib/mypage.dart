@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bmi_calculator/selected_industry.dart';
+import 'package:colleXpass/selected_industry.dart';
 
 class MyPage extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
-import 'package:bmi_calculator/index_models.dart';
+import 'package:colleXpass/index_models.dart';
 
 class SelectedIndustryPage extends StatefulWidget {
   @override
