@@ -6,7 +6,7 @@ class MyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.grey[600],
+        backgroundColor: Colors.grey[900],
         appBar: AppBar(
           title: Text('ようこそ！ ColleXPassへ！'),
           backgroundColor: Colors.blue[700],
@@ -21,28 +21,38 @@ class MyPage extends StatelessWidget {
                   children: [
                     Text(
                       'id : 123456789　進研　太郎さんのマイページ',
-                      style: TextStyle(fontSize: 15.0),
+                      style: TextStyle(fontSize: 15.0,color: Colors.white),
                     ),
                     Icon(
                       Icons.male,
+                      color: Colors.white,
                     )
                   ],
                 )),
             Expanded(
               flex: 2,
               child: Container(
-                color: Colors.grey[600],
+                color: Colors.grey[900],
                 child: Column(
                   children: [
                     Image.network(
                       'https://www.benesse-i-career.co.jp/gps_academic/img/footer_log_gps_a.png',
                       height: 50.0,
                     ),
-                    Image.network(
-                      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Multiplication_Sign.svg/768px-Multiplication_Sign.svg.png',
-                      width: 20.0,
-                      height: 20.0,
+                    Container(
+                      width: 20,
+                      height: 20,
+                      child:Text("X",style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                      ),)
                     ),
+                    // Image.network(
+                    //   'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Multiplication_Sign.svg/768px-Multiplication_Sign.svg.png',
+                    //   width: 20.0,
+                    //   height: 20.0,
+                    // ),
                     Container(
                       height:50,
                       color: Colors.white,
@@ -89,7 +99,7 @@ class MyPage extends StatelessWidget {
                     height: 50.0,
                     width: 400.0,
                     child: RaisedButton(
-                      color: Colors.black,
+                      color: Colors.blue[700],
                       child: Text(
                         "将来を見つけてみよう",
                         style: TextStyle(
@@ -110,7 +120,7 @@ class MyPage extends StatelessWidget {
                     height: 50.0,
                     width: 400.0,
                     child: RaisedButton(
-                      color: Colors.black,
+                      color: Colors.blue[700],
                       child: Text(
                         "お気に入り一覧へ",
                         style: TextStyle(

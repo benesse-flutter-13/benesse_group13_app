@@ -33,7 +33,7 @@ class ComparedByUser extends StatelessWidget {
                     title: Row(
                       children: <Widget>[
                         Text(
-                          '医師   A さん',
+                          '医師   B さん',
                           style: TextStyle(
                             fontSize: 30.0,
                             fontWeight: FontWeight.bold,
@@ -145,7 +145,7 @@ class ComparedByUser extends StatelessWidget {
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.lightGreen,
+                    primary: Colors.green[600],
                     onPrimary: Colors.white,
                   ),
                   onPressed: () {},
