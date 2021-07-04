@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-
-
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({
-  Key key,
-  this.label,
-  // this.icon,
+    Key key,
+    this.label,
+    // this.icon,
     // this.pic,
   }) : super(key: key);
   // MyStatefulWidget({this.icon,this.label});
@@ -19,7 +17,7 @@ class MyStatefulWidget extends StatefulWidget {
 
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  var list2=false;
+  var list2 = false;
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(
@@ -37,7 +35,5 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       activeColor: Colors.blue,
       selected: list2,
     );
-
   }
 }
-
