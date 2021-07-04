@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator/selected_industry.dart';
 
 class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(
+          title: Text('ようこそ！　ColleXPassへ'),
+        ),
         body: Column(
           children: [
-            SizedBox(height: 24.0),
             Container(
                 width: double.infinity,
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.grey)),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
                       'id : 123456789　ようこそ！ 進研　太郎さん',
@@ -46,12 +50,12 @@ class MyPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 3,
+              flex: 2,
               child: Center(
                 child: Container(
                   padding: EdgeInsets.all(20.0),
                   child: Text(
-                    'Colle×Pass',
+                    'ColleXPass',
                     style: TextStyle(
                         decoration: TextDecoration.underline,
                         color: Colors.black,
@@ -87,7 +91,10 @@ class MyPage extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        // ボタン処理
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SelectedIndustryPage()));
                       },
                     ),
                   ),
@@ -103,9 +110,7 @@ class MyPage extends StatelessWidget {
                           fontSize: 30.0,
                         ),
                       ),
-                      onPressed: () {
-                        // Navigator.push(context, MaterialPageRoute(builder: (context) => SelectIndustry()));
-                      },
+                      onPressed: () {},
                     ),
                   ),
                 ],
