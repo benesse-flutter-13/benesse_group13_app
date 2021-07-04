@@ -63,14 +63,6 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
                 MyStatefulWidget(label: "建築系",),
                 MyStatefulWidget(label: "運輸系",),
 
-                // MyStatefulWidget(label: "neko", icon: Icons.medical_services,),
-                // MyStatefulWidget(label: "neko", icon: Icons.medical_services,),
-                // MyStatefulWidget(label: "neko", icon: Icons.medical_services,),
-                // MyStatefulWidget(label: "neko", icon: Icons.medical_services,),
-                // MyStatefulWidget(label: "neko", icon: Icons.medical_services,),
-                // MyStatefulWidget(label: "neko", icon: Icons.medical_services,),
-
-
               ],
             ),
           ),
@@ -83,6 +75,8 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => setState(() {
+
+          //page change
           _count++;
           print(_count);
         }),
