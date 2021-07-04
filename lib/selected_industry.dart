@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
+import 'package:bmi_calculator/index_models.dart';
 
 class SelectedIndustryPage extends StatefulWidget {
   @override
@@ -110,6 +111,8 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => setState(() {
           //page change
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => IndexModels()));
           _count++;
           print(_count);
         }),
