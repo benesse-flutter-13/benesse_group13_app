@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'icon_content.dart';
 import 'reusable_card.dart';
-import 'constants.dart';
-
 
 class SelectedIndustryPage extends StatefulWidget {
   @override
@@ -11,63 +8,100 @@ class SelectedIndustryPage extends StatefulWidget {
 }
 
 class _SelectedIndustryPage extends State<SelectedIndustryPage> {
-
   var _checkBox2 = false;
   var _isCheckboxChecked = false;
   // var list1 = false;
   // var list2 = false;
-  var _count=0;
+  var _count = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('将来興味のある分野を選んでください'),
-        ),
-        body: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                // CheckboxListTile(
-                //   // value: _isCheckboxChecked,
-                //   value: list1,
-                //   onChanged: (bool value) {
-                //     setState(() => list1 = value);
-                //     // print(_isCheckboxChecked);
-                //   },
-                //   title: Text('医療・看護系'),
-                //   // subtitle: Text("This is a subtitle"),
-                //   secondary: Icon(Icons.medical_services),
-                //   activeColor: Colors.blue,
-                //   selected: list1,
-                // ),
-                MyStatefulWidget(label: "法務系"),
-                MyStatefulWidget(label: "法務系", ),
-                MyStatefulWidget(label: "公務員系", ),
-                MyStatefulWidget(label: "公務員保安系", ),
-                MyStatefulWidget(label: "対人サービス系", ),
-                MyStatefulWidget(label: "技能サービス系", ),
-                MyStatefulWidget(label: "金融系", ),
-                MyStatefulWidget(label: "営業・販売系",),
-                MyStatefulWidget(label: "事務系", ),
-                MyStatefulWidget(label: "マスコミ系", ),
-                MyStatefulWidget(label: "医療・看護系",),
-                MyStatefulWidget(label: "企画調査系",),
-                MyStatefulWidget(label: "芸能・芸術系",),
-                MyStatefulWidget(label: "デザイン系",),
-                MyStatefulWidget(label: "教育系",),
-                MyStatefulWidget(label: "社会・福祉系",),
-                MyStatefulWidget(label: "自然研究・技術系",),
-                MyStatefulWidget(label: "機械・化学研究・技術系",),
-                MyStatefulWidget(label: "コンピューター系",),
-                MyStatefulWidget(label: "建築系",),
-                MyStatefulWidget(label: "運輸系",),
-
-              ],
-            ),
+      appBar: AppBar(
+        title: Text('将来興味のある分野を選んでください'),
+      ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              // CheckboxListTile(
+              //   // value: _isCheckboxChecked,
+              //   value: list1,
+              //   onChanged: (bool value) {
+              //     setState(() => list1 = value);
+              //     // print(_isCheckboxChecked);
+              //   },
+              //   title: Text('医療・看護系'),
+              //   // subtitle: Text("This is a subtitle"),
+              //   secondary: Icon(Icons.medical_services),
+              //   activeColor: Colors.blue,
+              //   selected: list1,
+              // ),
+              MyStatefulWidget(label: "法務系"),
+              MyStatefulWidget(
+                label: "法務系",
+              ),
+              MyStatefulWidget(
+                label: "公務員系",
+              ),
+              MyStatefulWidget(
+                label: "公務員保安系",
+              ),
+              MyStatefulWidget(
+                label: "対人サービス系",
+              ),
+              MyStatefulWidget(
+                label: "技能サービス系",
+              ),
+              MyStatefulWidget(
+                label: "金融系",
+              ),
+              MyStatefulWidget(
+                label: "営業・販売系",
+              ),
+              MyStatefulWidget(
+                label: "事務系",
+              ),
+              MyStatefulWidget(
+                label: "マスコミ系",
+              ),
+              MyStatefulWidget(
+                label: "医療・看護系",
+              ),
+              MyStatefulWidget(
+                label: "企画調査系",
+              ),
+              MyStatefulWidget(
+                label: "芸能・芸術系",
+              ),
+              MyStatefulWidget(
+                label: "デザイン系",
+              ),
+              MyStatefulWidget(
+                label: "教育系",
+              ),
+              MyStatefulWidget(
+                label: "社会・福祉系",
+              ),
+              MyStatefulWidget(
+                label: "自然研究・技術系",
+              ),
+              MyStatefulWidget(
+                label: "機械・化学研究・技術系",
+              ),
+              MyStatefulWidget(
+                label: "コンピューター系",
+              ),
+              MyStatefulWidget(
+                label: "建築系",
+              ),
+              MyStatefulWidget(
+                label: "運輸系",
+              ),
+            ],
           ),
         ),
-
+      ),
 
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
@@ -75,7 +109,6 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => setState(() {
-
           //page change
           _count++;
           print(_count);
@@ -84,13 +117,6 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
         child: const Icon(Icons.arrow_forward_ios),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
-
-
-
-
-
-
 
       //
       //   floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -136,8 +162,6 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
       // ),
     );
   }
-
-
 }
 
 //   CheckboxListTile buildCheckboxListTile() {
@@ -156,8 +180,7 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
 //               );
 //   }
 // }
-
-
+//
 //
 // class ReusableCard extends StatelessWidget {
 // ReusableCard({this._isCheckboxChecked});
@@ -205,8 +228,7 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
 //
 // var _checkBox2 = false;
 // var _isCheckboxChecked=false;
-
-
+//
 // Widget myContainer({bool : _isCheckboxChecked}) {
 //   return Container(
 //     CheckboxListTile(
