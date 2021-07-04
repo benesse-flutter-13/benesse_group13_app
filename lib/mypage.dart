@@ -16,10 +16,9 @@ class MyPage extends StatelessWidget {
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.grey)),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      'id : 123456789　ようこそ！ 進研　太郎さん',
+                      'id : 123456789　進研　太郎さんのマイページ',
                       style: TextStyle(fontSize: 15.0),
                     ),
                     Icon(
