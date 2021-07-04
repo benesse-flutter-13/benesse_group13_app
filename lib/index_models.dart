@@ -2,152 +2,185 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
+import 'package:bmi_calculator/compared_by_user.dart';
 import 'indicator.dart';
 
-
 class IndexModels extends StatelessWidget {
-  List RollModels=
-      [
-        ModelData("薬剤者", "A",
-            Image.asset("images/pharmasist.jpg",
-                  height: 100,
-                  width: 100,)
-        ),
-        ModelData("医者", "B",
-          Image.asset("images/doctor.jpg",
+  List RollModels = [
+    ModelData(
+        "薬剤者",
+        "A",
+        Image.asset(
+          "images/pharmasist.jpg",
           height: 100,
-          width: 100,)
-        ),
-        ModelData("薬剤師","C",
-          Image.asset("images/pharmasist.jpg",
+          width: 100,
+        )),
+    ModelData(
+        "医者",
+        "B",
+        Image.asset(
+          "images/doctor.jpg",
           height: 100,
-          width: 100,)
-        ),
-        ModelData("医療事務", "D",
-          Image.asset("images/computer_doctor_man.png",
+          width: 100,
+        )),
+    ModelData(
+        "薬剤師",
+        "C",
+        Image.asset(
+          "images/pharmasist.jpg",
           height: 100,
-          width: 100,)
-        ),
-        ModelData("test", "test",
-          Image.asset("images/default_user.jpg",
+          width: 100,
+        )),
+    ModelData(
+        "医療事務",
+        "D",
+        Image.asset(
+          "images/computer_doctor_man.png",
           height: 100,
-          width: 100,)
-        ),
-        ModelData("test", "test",
-            Image.asset("images/default_user.jpg",
-              height: 100,
-              width: 100,)
-        ),
-        ModelData("test", "test",
-            Image.asset("images/default_user.jpg",
-              height: 100,
-              width: 100,)
-        ),
-        ModelData("test", "test",
-            Image.asset("images/default_user.jpg",
-              height: 100,
-              width: 100,)
-        ),
-      ];
-
+          width: 100,
+        )),
+    ModelData(
+        "test",
+        "test",
+        Image.asset(
+          "images/default_user.jpg",
+          height: 100,
+          width: 100,
+        )),
+    ModelData(
+        "test",
+        "test",
+        Image.asset(
+          "images/default_user.jpg",
+          height: 100,
+          width: 100,
+        )),
+    ModelData(
+        "test",
+        "test",
+        Image.asset(
+          "images/default_user.jpg",
+          height: 100,
+          width: 100,
+        )),
+    ModelData(
+        "test",
+        "test",
+        Image.asset(
+          "images/default_user.jpg",
+          height: 100,
+          width: 100,
+        )),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("ColleXpass"),
-      ),
+        appBar: AppBar(
+          title: Text("ColleXpass"),
+        ),
 
-      //文章部分
-      body: SingleChildScrollView(
-        child:Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top:12.0,right: 12.0,left: 12.0),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text("あなたに近い学力の　", style: TextStyle(
-                        fontSize: 18,
-                      ),),
-                    ],
-                  ),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text( "医療", style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.redAccent,
-                      )),
-                      Text("　業界の人の職業は…", style: TextStyle(
-                        fontSize: 22,
-                      ),)
-                    ],
-                  ),
-                ],
+        //文章部分
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding:
+                    const EdgeInsets.only(top: 12.0, right: 12.0, left: 12.0),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "あなたに近い学力の　",
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text("医療",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.redAccent,
+                            )),
+                        Text(
+                          "　業界の人の職業は…",
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
 
+              //円グラフ部分
+              PieChartSample2(),
 
-            //円グラフ部分
-            PieChartSample2(),
-
-            // それぞれの人を移す部分
-            Container(
-
-              child: Column(
+              // それぞれの人を移す部分
+              Container(
+                  child: Column(
                 children: [
-                  Text("あなたに近いロールモデル一覧",style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),),
+                  Text(
+                    "あなたに近いロールモデル一覧",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                    Indicator(
-                      color: Colors.greenAccent,
-                      text: "偏差値±3",
-                      isSquare: true,
-                    ),
-                    Indicator(
-                      color: Colors.blue,
-                      text: "偏差値>+3",
-                      isSquare: true,
-                    ),
-                    Indicator(
-                      color: Colors.redAccent,
-                      text: "偏差値<-3",
-                      isSquare: true,
-                    ),
-
-                  ],)
+                      Indicator(
+                        color: Colors.greenAccent,
+                        text: "偏差値±3",
+                        isSquare: true,
+                      ),
+                      Indicator(
+                        color: Colors.blue,
+                        text: "偏差値>+3",
+                        isSquare: true,
+                      ),
+                      Indicator(
+                        color: Colors.redAccent,
+                        text: "偏差値<-3",
+                        isSquare: true,
+                      ),
+                    ],
+                  )
                 ],
-            )),
+              )),
 
-            ListView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount:RollModels.length,
-                itemBuilder: (BuildContext context, int index){
+              ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: RollModels.length,
+                itemBuilder: (BuildContext context, int index) {
                   return Card(
                     elevation: 5.0,
                     child: ListTile(
                       leading: Container(
-                        width:80,
-                        height:100,
+                        width: 80,
+                        height: 100,
                         child: RollModels[index].image,
-                      ) ,
-
+                      ),
                       trailing: Text("詳細"),
-                      title: Text("${RollModels[index].jobs}　${RollModels[index].name}"),
+                      title: Text(
+                          "${RollModels[index].jobs}　${RollModels[index].name}"),
                       tileColor: RollBackgroundColor(index),
-                      onTap:() {
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ComparedByUser()));
                         //　ページ遷移部分
                         // Navigator.push(context, MaterialPageRoute(
                         //     builder: (context) => MovieListViewDetails(movieName: movies.elementAt(index),)));
@@ -155,15 +188,10 @@ class IndexModels extends StatelessWidget {
                     ),
                   );
                 },
-            )
-
-
-
-
-          ],
-        ),
-      )
-    );
+              )
+            ],
+          ),
+        ));
   }
 }
 
@@ -174,15 +202,13 @@ class PieChartSample2 extends StatefulWidget {
 
 class PieChart2State extends State {
   int touchedIndex;
-  List JobModels=
-  [
+  List JobModels = [
     IndustryData("医療事務", 15.0),
     IndustryData("臨床検査技師", 8.0),
-    IndustryData("看護師", 8.0 ),
-    IndustryData("薬剤師",7.0 ),
-    IndustryData("医師",5.0 ),
+    IndustryData("看護師", 8.0),
+    IndustryData("薬剤師", 7.0),
+    IndustryData("医師", 5.0),
     IndustryData("その他", 57)
-
   ];
 
   @override
@@ -200,12 +226,16 @@ class PieChart2State extends State {
                 aspectRatio: 1.0,
                 child: PieChart(
                   PieChartData(
-                      pieTouchData: PieTouchData(touchCallback: (pieTouchResponse) {
+                      pieTouchData:
+                          PieTouchData(touchCallback: (pieTouchResponse) {
                         setState(() {
-                          final desiredTouch = pieTouchResponse.touchInput is! PointerExitEvent &&
+                          final desiredTouch = pieTouchResponse.touchInput
+                                  is! PointerExitEvent &&
                               pieTouchResponse.touchInput is! PointerUpEvent;
-                          if (desiredTouch && pieTouchResponse.touchedSection != null) {
-                            touchedIndex = pieTouchResponse.touchedSection.touchedSectionIndex;
+                          if (desiredTouch &&
+                              pieTouchResponse.touchedSection != null) {
+                            touchedIndex = pieTouchResponse
+                                .touchedSection.touchedSectionIndex;
                           } else {
                             touchedIndex = -1;
                           }
@@ -244,7 +274,7 @@ class PieChart2State extends State {
                 ),
                 Indicator(
                   color: Color(0xff845bef),
-                  text:  JobModels[2].industry,
+                  text: JobModels[2].industry,
                   isSquare: true,
                 ),
                 SizedBox(
@@ -252,7 +282,7 @@ class PieChart2State extends State {
                 ),
                 Indicator(
                   color: Color(0xff13d38e),
-                  text:  JobModels[3].industry,
+                  text: JobModels[3].industry,
                   isSquare: true,
                 ),
                 SizedBox(
@@ -260,7 +290,7 @@ class PieChart2State extends State {
                 ),
                 Indicator(
                   color: Colors.redAccent,
-                  text:  JobModels[4].industry,
+                  text: JobModels[4].industry,
                   isSquare: true,
                 ),
                 SizedBox(
@@ -268,7 +298,7 @@ class PieChart2State extends State {
                 ),
                 Indicator(
                   color: Colors.lightGreenAccent,
-                  text:  JobModels[5].industry,
+                  text: JobModels[5].industry,
                   isSquare: true,
                 ),
                 SizedBox(
@@ -298,7 +328,9 @@ class PieChart2State extends State {
             title: '${JobModels[i].percentage}%',
             radius: radius,
             titleStyle: TextStyle(
-                fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xff000000)),
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xff000000)),
           );
         case 1:
           return PieChartSectionData(
@@ -307,7 +339,9 @@ class PieChart2State extends State {
             title: '${JobModels[i].percentage}%',
             radius: radius,
             titleStyle: TextStyle(
-                fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xff000000)),
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xff000000)),
           );
         case 2:
           return PieChartSectionData(
@@ -316,7 +350,9 @@ class PieChart2State extends State {
             title: '${JobModels[i].percentage}%',
             radius: radius,
             titleStyle: TextStyle(
-                fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xff000000)),
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xff000000)),
           );
         case 3:
           return PieChartSectionData(
@@ -325,7 +361,9 @@ class PieChart2State extends State {
             title: '${JobModels[i].percentage}%',
             radius: radius,
             titleStyle: TextStyle(
-                fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xff000000)),
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xff000000)),
           );
         case 4:
           return PieChartSectionData(
@@ -334,7 +372,9 @@ class PieChart2State extends State {
             title: '${JobModels[i].percentage}%',
             radius: radius,
             titleStyle: TextStyle(
-                fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xff000000)),
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xff000000)),
           );
         case 5:
           return PieChartSectionData(
@@ -343,7 +383,9 @@ class PieChart2State extends State {
             title: '${JobModels[i].percentage}%',
             radius: radius,
             titleStyle: TextStyle(
-                fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xff000000)),
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xff000000)),
           );
         default:
           return null;
@@ -352,14 +394,14 @@ class PieChart2State extends State {
   }
 }
 
-class IndustryData{
+class IndustryData {
   String industry;
   double percentage;
 
   IndustryData(this.industry, this.percentage);
 }
 
-class ModelData{
+class ModelData {
   String jobs;
   String name;
   Image image;
@@ -367,15 +409,14 @@ class ModelData{
   ModelData(this.jobs, this.name, this.image);
 }
 
-Color RollBackgroundColor(int index){
-  if (index<1){
+Color RollBackgroundColor(int index) {
+  if (index < 1) {
     return Colors.greenAccent;
-  }else if(index>=1 && index<3) {
+  } else if (index >= 1 && index < 3) {
     return Colors.blue;
-  }else if(index >= 3 && index % 2 ==1){
+  } else if (index >= 3 && index % 2 == 1) {
     return Colors.redAccent;
-  }else{
+  } else {
     return Colors.blue;
   }
 }
-
