@@ -20,6 +20,7 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('将来興味のある分野を選択！'),
+        backgroundColor: Colors.blue[700],
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -38,7 +39,7 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
               //   activeColor: Colors.blue,
               //   selected: list1,
               // ),
-              MyStatefulWidget(label: "法務系"),
+              // MyStatefulWidget(label: "法務系"),
               MyStatefulWidget(
                 label: "法務系",
               ),

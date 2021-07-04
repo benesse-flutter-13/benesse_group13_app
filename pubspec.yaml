@@ -27,3 +27,10 @@ flutter:
     - images/doctor.jpg
     - images/pharmasist.jpg
     - images/default_user.jpg
+    - images/facebook_profile_image.png
+    - images/logo.png
+
+  fonts:
+    - family: NotoSansJP
+      fonts:
+        - asset: fonts/NotoSansJP-Bold.otf
