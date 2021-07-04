@@ -16,9 +16,10 @@ class ComparedByUser extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("${this.UserName}さんとの比較")
+          title: Text("${this.UserName}さんとの比較"),
+          backgroundColor: Colors.blue[700],
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey[600],
         body: SingleChildScrollView(
           child: SafeArea(
             child: Column(
@@ -127,6 +128,7 @@ class ComparedByUser extends StatelessWidget {
                     ],
                   ),
                 ),
+
                 LineChartSample2(),
                 SizedBox(
                   height: 15.0,
@@ -372,6 +374,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
           ],
         ),
         Container(
+          color: Colors.white,
           child: Center(
             child: Text(
               '破線:Aさん  実線:あなた',
@@ -387,9 +390,9 @@ class _LineChartSample2State extends State<LineChartSample2> {
               aspectRatio: 1.70,
               child: Container(
                 decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(18),
-                    ),
+                    // borderRadius: BorderRadius.all(
+                    //   Radius.circular(18),
+                    // ),
                     color: Colors.white),
                 child: Padding(
                   padding: const EdgeInsets.only(
@@ -404,116 +407,116 @@ class _LineChartSample2State extends State<LineChartSample2> {
     );
   }
 
-  LineChartData mainData() {
-    return LineChartData(
-      backgroundColor: Colors.white70,
-      gridData: FlGridData(
-        show: true,
-        drawVerticalLine: true,
-        getDrawingHorizontalLine: (value) {
-          return FlLine(
-            color: Colors.grey,
-            strokeWidth: 1,
-          );
-        },
-        getDrawingVerticalLine: (value) {
-          return FlLine(
-            color: Colors.grey,
-            strokeWidth: 1,
-          );
-        },
-      ),
-      titlesData: FlTitlesData(
-        show: true,
-        bottomTitles: SideTitles(
-          showTitles: true,
-          reservedSize: 22,
-          getTextStyles: (value) => const TextStyle(
-              color: Color(0xff68737d),
-              fontWeight: FontWeight.bold,
-              fontSize: 16),
-          getTitles: (value) {
-            switch (value.toInt()) {
-              case 0:
-                return '4月';
-              case 1:
-                return '8月\n高校1年';
-              case 2:
-                return '12月';
-              case 3:
-                return '4月';
-              case 4:
-                return '8月\n高校2年';
-              case 5:
-                return '12月';
-              case 6:
-                return '4月';
-              case 7:
-                return '8月\n高校3年';
-              case 8:
-                return '12月';
-            }
-            return '';
-          },
-          margin: 8,
-        ),
-        leftTitles: SideTitles(
-          showTitles: true,
-          getTextStyles: (value) => const TextStyle(
-            color: Color(0xff67727d),
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-          ),
-          getTitles: (value) {
-            switch (value.toInt()) {
-              case 45:
-                return '45';
-              case 50:
-                return '50';
-              case 55:
-                return '55';
-              case 60:
-                return '60';
-            }
-            return '';
-          },
-          reservedSize: 28,
-          margin: 12,
-        ),
-      ),
-      borderData: FlBorderData(
-          show: true,
-          border: Border.all(color: const Color(0xff37434d), width: 1)),
-      minX: 0,
-      maxX: 8,
-      minY: 45,
-      maxY: 60,
-      lineBarsData: [
-        LineChartBarData(
-          spots: [
-            FlSpot(0, 50),
-            FlSpot(2.6, 51),
-            FlSpot(4.9, 51.3),
-            FlSpot(6.8, 52),
-            FlSpot(8, 53),
-            FlSpot(9.5, 55),
-            FlSpot(11, 57),
-          ],
-          isCurved: false,
-          colors: colorMath,
-          barWidth: 5,
-          isStrokeCapRound: true,
-          dotData: FlDotData(
-            show: true,
-          ),
-          belowBarData: BarAreaData(
-            show: true,
-            colors: colorMath.map((color) => color.withOpacity(0.3)).toList(),
-          ),
-        ),
-      ],
-    );
-  }
+  // LineChartData mainData() {
+  //   return LineChartData(
+  //     backgroundColor: Colors.white70,
+  //     gridData: FlGridData(
+  //       show: true,
+  //       drawVerticalLine: true,
+  //       getDrawingHorizontalLine: (value) {
+  //         return FlLine(
+  //           color: Colors.grey,
+  //           strokeWidth: 1,
+  //         );
+  //       },
+  //       getDrawingVerticalLine: (value) {
+  //         return FlLine(
+  //           color: Colors.grey,
+  //           strokeWidth: 1,
+  //         );
+  //       },
+  //     ),
+  //     titlesData: FlTitlesData(
+  //       show: true,
+  //       bottomTitles: SideTitles(
+  //         showTitles: true,
+  //         reservedSize: 22,
+  //         getTextStyles: (value) => const TextStyle(
+  //             color: Color(0xff68737d),
+  //             fontWeight: FontWeight.bold,
+  //             fontSize: 16),
+  //         getTitles: (value) {
+  //           switch (value.toInt()) {
+  //             case 0:
+  //               return '4月';
+  //             case 1:
+  //               return '8月\n高校1年';
+  //             case 2:
+  //               return '12月';
+  //             case 3:
+  //               return '4月';
+  //             case 4:
+  //               return '8月\n高校2年';
+  //             case 5:
+  //               return '12月';
+  //             case 6:
+  //               return '4月';
+  //             case 7:
+  //               return '8月\n高校3年';
+  //             case 8:
+  //               return '12月';
+  //           }
+  //           return '';
+  //         },
+  //         margin: 8,
+  //       ),
+  //       leftTitles: SideTitles(
+  //         showTitles: true,
+  //         getTextStyles: (value) => const TextStyle(
+  //           color: Color(0xff67727d),
+  //           fontWeight: FontWeight.bold,
+  //           fontSize: 15,
+  //         ),
+  //         getTitles: (value) {
+  //           switch (value.toInt()) {
+  //             case 45:
+  //               return '45';
+  //             case 50:
+  //               return '50';
+  //             case 55:
+  //               return '55';
+  //             case 60:
+  //               return '60';
+  //           }
+  //           return '';
+  //         },
+  //         reservedSize: 28,
+  //         margin: 12,
+  //       ),
+  //     ),
+  //     borderData: FlBorderData(
+  //         show: true,
+  //         border: Border.all(color: const Color(0xff37434d), width: 1)),
+  //     minX: 0,
+  //     maxX: 8,
+  //     minY: 45,
+  //     maxY: 60,
+  //     lineBarsData: [
+  //       LineChartBarData(
+  //         spots: [
+  //           FlSpot(0, 50),
+  //           FlSpot(2.6, 51),
+  //           FlSpot(4.9, 51.3),
+  //           FlSpot(6.8, 52),
+  //           FlSpot(8, 53),
+  //           FlSpot(9.5, 55),
+  //           FlSpot(11, 57),
+  //         ],
+  //         isCurved: false,
+  //         colors: colorMath,
+  //         barWidth: 5,
+  //         isStrokeCapRound: true,
+  //         dotData: FlDotData(
+  //           show: true,
+  //         ),
+  //         belowBarData: BarAreaData(
+  //           show: true,
+  //           colors: colorMath.map((color) => color.withOpacity(0.3)).toList(),
+  //         ),
+  //       ),
+  //     ],
+  //   );
+  // }
 
   LineChartData avgData(
       List<Color> colorList, List<FlSpot> oldData, List<FlSpot> userData) {

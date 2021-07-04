@@ -8,7 +8,7 @@ import 'indicator.dart';
 class IndexModels extends StatelessWidget {
   List RollModels = [
     ModelData(
-        "薬剤者",
+        "薬剤師",
         "A",
         Image.asset(
           "images/pharmasist.jpg",
