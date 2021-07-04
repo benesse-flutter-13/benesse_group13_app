@@ -13,6 +13,7 @@ class MyPage extends StatelessWidget {
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.grey)),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
                       'id : 123456789　ようこそ！ 進研　太郎さん',
