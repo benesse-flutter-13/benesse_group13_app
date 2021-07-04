@@ -19,7 +19,7 @@ class _SelectedIndustryPage extends State<SelectedIndustryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('将来興味のある分野を選んでください'),
+        title: Text('将来興味のある分野を選択！'),
       ),
       body: Center(
         child: SingleChildScrollView(

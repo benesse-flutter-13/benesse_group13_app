@@ -6,139 +6,150 @@ import 'package:fl_chart/fl_chart.dart';
 
 class ComparedByUser extends StatelessWidget {
   @override
+  final String UserName;
+
+  const ComparedByUser({Key key, this.UserName}) : super(key: key);
+
+
+
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(
+          title: Text("${this.UserName}さんとの比較")
+        ),
         backgroundColor: Colors.white,
-        body: SafeArea(
-          child: Column(
-            children: <Widget>[
-              Card(
-                child: ListTile(
-                  leading: Icon(
-                    Icons.local_hospital,
-                    color: Colors.black,
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              children: <Widget>[
+                Card(
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.local_hospital,
+                      color: Colors.black,
+                    ),
+                    title: Row(
+                      children: <Widget>[
+                        Text(
+                          '医師   A さん',
+                          style: TextStyle(
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(
+                            left: 40.0,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.blue),
+                          ),
+                          child: Text(
+                            '55',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30.0,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    trailing: Icon(
+                      Icons.star,
+                      color: Colors.grey,
+                    ),
                   ),
-                  title: Row(
+                ),
+                Container(
+                  child: Column(
                     children: <Widget>[
-                      Text(
-                        '医師   A さん',
-                        style: TextStyle(
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.bold,
+                      Card(
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.arrow_circle_down_sharp,
+                          ),
+                          title: Text(
+                            '東京都　B高校',
+                            style: TextStyle(
+                              fontSize: 25.0,
+                            ),
+                          ),
+                          trailing: Icon(Icons.more_vert),
                         ),
                       ),
-                      Container(
-                        margin: EdgeInsets.only(
-                          left: 40.0,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.blue),
-                        ),
-                        child: Text(
-                          '55',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30.0,
+                      // ElevatedButton.icon(
+                      //   icon: const Icon(
+                      //     Icons.tag_faces,
+                      //     color: Colors.white,
+                      //   ),
+                      //   label: const Text(
+                      //     'こんな参考書使ってました',
+                      //     style: TextStyle(
+                      //       fontSize: 10.0,
+                      //     ),
+                      //   ),
+                      //   style: ElevatedButton.styleFrom(
+                      //     primary: Colors.lightGreen,
+                      //     onPrimary: Colors.white,
+                      //   ),
+                      //   onPressed: () {},
+                      // ),
+                      Card(
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.arrow_circle_down_sharp,
                           ),
+                          title: Text(
+                            'C大学　医学部',
+                            style: TextStyle(
+                              fontSize: 25.0,
+                            ),
+                          ),
+                          trailing: Icon(Icons.more_vert),
+                        ),
+                      ),
+                      Card(
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.arrow_circle_down_sharp,
+                          ),
+                          title: Text(
+                            '研修医',
+                            style: TextStyle(
+                              fontSize: 25.0,
+                            ),
+                          ),
+                          trailing: Icon(Icons.more_vert),
                         ),
                       ),
                     ],
                   ),
-                  trailing: Icon(
-                    Icons.star,
-                    color: Colors.grey,
+                ),
+                LineChartSample2(),
+                SizedBox(
+                  height: 15.0,
+                ),
+                ElevatedButton.icon(
+                  icon: const Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    color: Colors.white,
                   ),
-                ),
-              ),
-              Container(
-                child: Column(
-                  children: <Widget>[
-                    Card(
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.arrow_circle_down_sharp,
-                        ),
-                        title: Text(
-                          '東京都　B高校',
-                          style: TextStyle(
-                            fontSize: 25.0,
-                          ),
-                        ),
-                        trailing: Icon(Icons.more_vert),
-                      ),
+                  label: const Text(
+                    '苦手単元はClassiで確認しよう！',
+                    style: TextStyle(
+                      fontSize: 20.0,
                     ),
-                    // ElevatedButton.icon(
-                    //   icon: const Icon(
-                    //     Icons.tag_faces,
-                    //     color: Colors.white,
-                    //   ),
-                    //   label: const Text(
-                    //     'こんな参考書使ってました',
-                    //     style: TextStyle(
-                    //       fontSize: 10.0,
-                    //     ),
-                    //   ),
-                    //   style: ElevatedButton.styleFrom(
-                    //     primary: Colors.lightGreen,
-                    //     onPrimary: Colors.white,
-                    //   ),
-                    //   onPressed: () {},
-                    // ),
-                    Card(
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.arrow_circle_down_sharp,
-                        ),
-                        title: Text(
-                          'C大学　医学部',
-                          style: TextStyle(
-                            fontSize: 25.0,
-                          ),
-                        ),
-                        trailing: Icon(Icons.more_vert),
-                      ),
-                    ),
-                    Card(
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.arrow_circle_down_sharp,
-                        ),
-                        title: Text(
-                          '研修医',
-                          style: TextStyle(
-                            fontSize: 25.0,
-                          ),
-                        ),
-                        trailing: Icon(Icons.more_vert),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              LineChartSample2(),
-              SizedBox(
-                height: 15.0,
-              ),
-              ElevatedButton.icon(
-                icon: const Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: Colors.white,
-                ),
-                label: const Text(
-                  '苦手単元はClassiで確認',
-                  style: TextStyle(
-                    fontSize: 20.0,
                   ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.lightGreen,
+                    onPrimary: Colors.white,
+                  ),
+                  onPressed: () {},
                 ),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.lightGreen,
-                  onPrimary: Colors.white,
-                ),
-                onPressed: () {},
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

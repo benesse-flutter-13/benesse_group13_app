@@ -77,7 +77,7 @@ class IndexModels extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("ColleXpass"),
+          title: Text("気になるユーザーをクリック！"),
         ),
 
         //文章部分
@@ -180,7 +180,7 @@ class IndexModels extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ComparedByUser()));
+                                builder: (context) => ComparedByUser(UserName: RollModels[index].name)));
                         //　ページ遷移部分
                         // Navigator.push(context, MaterialPageRoute(
                         //     builder: (context) => MovieListViewDetails(movieName: movies.elementAt(index),)));
