@@ -2,7 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:bmi_calculator/compared_by_user.dart';
+import 'package:colleXpass/compared_by_user.dart';
 import 'indicator.dart';
 
 class IndexModels extends StatelessWidget {
