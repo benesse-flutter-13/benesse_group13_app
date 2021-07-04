@@ -77,6 +77,7 @@ class IndexModels extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.blue[700],
           title: Text("気になるユーザーをクリック！"),
         ),
 
@@ -297,7 +298,7 @@ class PieChart2State extends State {
                   height: 4,
                 ),
                 Indicator(
-                  color: Colors.lightGreenAccent,
+                  color: Colors.lightGreen[800],
                   text: JobModels[5].industry,
                   isSquare: true,
                 ),
@@ -330,7 +331,7 @@ class PieChart2State extends State {
             titleStyle: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xff000000)),
+                color: const Color(0xffffffff)),
           );
         case 1:
           return PieChartSectionData(
@@ -341,7 +342,7 @@ class PieChart2State extends State {
             titleStyle: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xff000000)),
+                color: const Color(0xffffffff)),
           );
         case 2:
           return PieChartSectionData(
@@ -352,7 +353,7 @@ class PieChart2State extends State {
             titleStyle: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xff000000)),
+                color: const Color(0xffffffff)),
           );
         case 3:
           return PieChartSectionData(
@@ -363,7 +364,7 @@ class PieChart2State extends State {
             titleStyle: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xff000000)),
+                color: const Color(0xffffffff)),
           );
         case 4:
           return PieChartSectionData(
@@ -374,18 +375,18 @@ class PieChart2State extends State {
             titleStyle: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xff000000)),
+                color: const Color(0xffffffff)),
           );
         case 5:
           return PieChartSectionData(
-            color: Colors.lightGreenAccent,
+            color: Colors.lightGreen[800],
             value: JobModels[i].percentage,
             title: '${JobModels[i].percentage}%',
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xff000000)),
+                color: const Color(0xffffffff)),
           );
         default:
           return null;
